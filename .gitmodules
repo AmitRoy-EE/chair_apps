@@ -1,0 +1,3 @@
+[submodule "pages/submodules/comfort_moo"]
+	path = pages/submodules/comfort_moo
+	url = https://gitlab.ruhr-uni-bochum.de/huckedyp/comfort_moo.git
