@@ -9,18 +9,17 @@ WORKDIR /chair_apps
 # copy repo contents to workdir
 COPY --chown=$MAMBA_USER:$MAMBA_USER ./ /chair_apps
 
+
+# install git
+USER root
+RUN apt update && apt install -y git
+USER $MAMBA_USER
+
+# checkout everything from submodules
+RUN git submodule update --init -f --recursive 
+
 # disable questions during installation
 # ENV DEBIAN_FRONTEND noninteractive
-
-# RUN apt update && apt install -y \
-#     build-essential \
-#     curl \
-#     software-properties-common \
-#     git \
-#     && rm -rf /var/lib/apt/lists/*
-
-# RUN git clone https://gitlab.ruhr-uni-bochum.de/huckedyp/chair_apps.git .
-# RUN pip3 install -r requirements.txt
 
 
 RUN micromamba install -n base -f env.yaml && \
