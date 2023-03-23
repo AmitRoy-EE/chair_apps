@@ -4,5 +4,5 @@ gatherUsageStats = false
 [server]
 runOnSave = true
 
-[general]
-email=""
+[theme]
+base="light"

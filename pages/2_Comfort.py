@@ -1,3 +1,3 @@
-from submodules.comfort_moo.lit import run
+from submodules.comfort_moo.app import run
 
 run()
