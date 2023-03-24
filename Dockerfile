@@ -19,7 +19,7 @@ USER $MAMBA_USER
 RUN git submodule update --init -f --recursive 
 
 # disable questions during installation
-# ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND noninteractive
 
 
 RUN micromamba install -n base -f env.yaml && \
