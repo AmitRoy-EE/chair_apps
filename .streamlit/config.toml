@@ -3,6 +3,11 @@ gatherUsageStats = false
 
 [server]
 runOnSave = true
+enableWebsocketCompression=false
+enableXsrfProtection=false
+enableCORS=false
+address="0.0.0.0"
+port="8501"
 
 [theme]
 base="light"

@@ -16,7 +16,7 @@ RUN apt update && apt install -y git
 USER $MAMBA_USER
 
 # checkout everything from submodules
-RUN git submodule update --init -f --recursive 
+# RUN git submodule update --init -f --recursive 
 
 # disable questions during installation
 ENV DEBIAN_FRONTEND noninteractive

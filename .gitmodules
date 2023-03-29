@@ -1,7 +1,6 @@
-[submodule "submodules/comfort_moo"]
-	path = submodules/comfort_moo
-	url = https://gitlab.ruhr-uni-bochum.de/huckedyp/comfort_moo.git
-
 [submodule "submodules/oemof_household"]
 	path = submodules/oemof_household
 	url = https://gitlab.ruhr-uni-bochum.de/ee/oemof_household.git
+[submodule "submodules/comfort_moo"]
+	path = submodules/comfort_moo
+	url = https://gitlab.ruhr-uni-bochum.de/ee/comfort_moo.git
