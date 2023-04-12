@@ -11,8 +11,10 @@ st.sidebar.success("Select an app.")
 
 st.markdown(
     """
-    This is a collection of tools we use for energy system analysis or to visualise their results.
+    This is a collection of tools for energy system analysis or a visualisation of results.
     
     **⬅️ Select one from the sidebar!**
+    
+    If you want to contribute, checkout [the repository](https://gitlab.ruhr-uni-bochum.de/ee/chair_apps).
 """)
 
