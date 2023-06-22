@@ -4,3 +4,6 @@
 [submodule "submodules/oemof_household"]
 	path = submodules/oemof_household
 	url = https://gitlab.ruhr-uni-bochum.de/ee/oemof_household.git
+[submodule "submodules/mcda_dashboard"]
+	path = submodules/mcda_dashboard
+	url = https://gitlab.ruhr-uni-bochum.de/ee/mcda-dashboard.git
