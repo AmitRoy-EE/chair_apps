@@ -1,6 +1,11 @@
 import sys
-sys.path.insert(0,"submodules/mcda_dashboard")
 
+submodule_paths = [entry for entry in sys.path if "submodules/" in entry]
+for path in submodule_paths:
+    sys.path.remove(path)
+
+
+sys.path.insert(0,"submodules/mcda_dashboard")
 from app import run
 
 run()
