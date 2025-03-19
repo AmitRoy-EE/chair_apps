@@ -1,22 +1,17 @@
-# app/Dockerfile
 
-# FROM continuumio/miniconda3:latest
-# FROM python:3.9-slim
-from mambaorg/micromamba:1.4-kinetic
-# FROM mambaorg/micromamba:1.3.1
+FROM mambaorg/micromamba:1.4-kinetic
 
 RUN mkdir chair_apps
 WORKDIR /chair_apps
+
 # copy repo contents to workdir
 COPY . .
 USER root
 RUN chown -R $MAMBA_USER:$MAMBA_USER /chair_apps
 USER $MAMBA_USER
-# checkout everything from submodules
-# RUN git submodule update --init -f --recursive 
 
-# disable questions during installation
-# ENV DEBIAN_FRONTEND noninteractive
+# replace whatever environment name with "base", which is required by the image
+RUN  sed -i 's/name: \b[[:alpha:]]*\b/name: base/' env.yaml
 
 
 RUN micromamba install -f env.yaml && \
@@ -26,11 +21,8 @@ RUN micromamba install -f env.yaml && \
 
 EXPOSE 8501
 
-# HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
-
 ARG MAMBA_DOCKERFILE_ACTIVATE=1  # (otherwise python will not be found)
-RUN pip install "protobuf~=3.19.0"
-
+ENV PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 RUN python -c "import streamlit"
 
 # first element is micromamba specific. For details see https://github.com/mamba-org/micromamba-docker 
