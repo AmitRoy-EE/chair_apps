@@ -1,0 +1,12 @@
+
+tests:
+  variables:
+      GIT_SUBMODULE_STRATEGY: recursive
+  script:
+    # create an environment and install dependencies
+    - uv venv .apps
+    - source .apps/bin/activate
+    - uv pip install -r requirements.txt 
+    - python -m pytest -v tests
+  only:
+    - merge_request

@@ -13,6 +13,10 @@ Adding a page is rather easy. The required steps are as follows.
 2) Ensure that your app is wrapped inside a single `run()` function.
 3) Add a page in the [pages](https://gitlab.ruhr-uni-bochum.de/ee/chair_apps/-/tree/main/pages?ref_type=heads) folder, which imports and executes this function. The existing pages may be used as inspiration.
 
+## Tests
+![coverage](https://gitlab.ruhr-uni-bochum.de/ee/ee/chair_apps/badges/main/coverage.svg?job=coverage)
+
+While unit tests are not actively developed, integration tests are in place, that ensure each page loads without error. They run upon merge request.
 
 
 
