@@ -4,6 +4,19 @@ A collection of [streamlit](https://streamlit.io/) apps for the purposes of teac
 
 It is currently hosted [here](https://apps.ee.rub.de/).
 
+## Setup
+
+1) Clone this repo and open it in vscode: 
+    * `git clone --recursive https://gitlab.ruhr-uni-bochum.de/ee/chair_apps.git`
+    * code `chair_apps`
+2) Install [uv](https://github.com/astral-sh/uv)
+3) Create a virtual environment: `uv venv .apps`
+4) Activate the environment: `source .apps/bin/activate`
+5) Install dependencies: `uv pip install -r requirements.txt`
+6) Run the app: `uv run streamlit run Home.py`
+
+Note: the migration to `uv` increases the speed of setup and testing significantly. However, certain non-python packages, e.g. `glpk` may have to be installed seperately now.
+
 ## Adding a page
 
 Adding a page is rather easy. The required steps are as follows.
@@ -15,7 +28,9 @@ Adding a page is rather easy. The required steps are as follows.
 
 ## Tests
 
-While unit tests are not actively developed, integration tests are in place, that ensure each page loads without error. They run upon merge request.
+Unit tests have not been developed everywhere. 
+
+Integration tests are in place, that ensure each page loads without error. They run upon merge request. However, they only assure the initial loading of a page and do not mimic interaction with UI elements. 
 
 
 

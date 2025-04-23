@@ -7,6 +7,12 @@ tests:
     - uv venv .apps
     - source .apps/bin/activate
     - uv pip install -r requirements.txt 
+    - uv pip freeze > requirements_frozen.txt
     - python -m pytest -v tests
   only:
     - merge_request
+  artifacts:
+    when: on_success
+    access: all
+    paths:
+      - requirements_frozen.txt
