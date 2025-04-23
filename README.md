@@ -15,7 +15,9 @@ Adding a page is rather easy. The required steps are as follows.
 
 ## Tests
 
-While unit tests are not actively developed, integration tests are in place, that ensure each page loads without error. They run upon merge request.
+Unit tests have not been developed everywhere. 
+
+Integration tests are in place, that ensure each page loads without error. They run upon merge request. However, they only assure the initial loading of a page and do not mimic interaction with UI elements. 
 
 
 
