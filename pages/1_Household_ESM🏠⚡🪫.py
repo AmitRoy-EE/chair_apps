@@ -1,11 +1,7 @@
 import sys
+from pathlib import Path
 
-submodule_paths = [entry for entry in sys.path if "submodules/" in entry]
-for path in submodule_paths:
-    sys.path.remove(path)
-
-sys.path.insert(0,"submodules/oemof_household")
-
+sys.path.append(str(Path(__file__).resolve().parents[1] / "submodules" / "oemof_household"))
 
 from oemof_app import run
 
