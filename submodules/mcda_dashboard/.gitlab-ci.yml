@@ -1,0 +1,24 @@
+# image: my_app:latest
+# image: condaforge/mambaforge:latest
+
+before_script:
+    - docker info
+
+stages:
+  - "build"
+  - "test"
+
+build_image:
+    stage: "build"
+    only: 
+        - "merge_requests"
+    script:
+        - docker build -t mcda-image .
+        - docker run mcda-image micromamba env export -n base
+
+unit_test:
+    stage: "test"
+    only:
+        - merge_requests
+    script:
+        - docker run mcda-image python -m pytest tests -sv

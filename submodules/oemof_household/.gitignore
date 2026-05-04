@@ -1,0 +1,11 @@
+# Blacklist
+*.lp
+*.oemof
+__pycache__
+/*.ipynb
+.vscode
+/results
+
+# Whitelist
+!setup/setup_select_gitbash.png
+!setup/scheme_oemof.png

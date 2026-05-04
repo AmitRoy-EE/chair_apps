@@ -1,0 +1,14 @@
+name: oemof
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pandas
+  - matplotlib
+  - plotly
+  - glpk
+  - pip
+  - black
+  - pip:
+    - oemof.solph==0.5.2 
+    - streamlit
